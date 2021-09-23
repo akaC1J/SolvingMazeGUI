@@ -12,7 +12,7 @@ import java.util.*;
 public class Maze {
 
     private boolean isHaveStart = false; //поле отвечающее есть ли старт в лабиринте
-    private boolean isHaveFinish = false;//поле отвечающее есть ли финишь в лабиринте
+    private boolean isHaveFinish = false;//поле отвечающее есть ли финиш в лабиринте
     private String error = "";
     private char[][] theMaze; //сам лабиринт (x-блок; _ - пусто; s - старт; f -финиш; . - путь)
     private int colStart, rowStart; // координаты старта
@@ -297,7 +297,7 @@ public class Maze {
         //* метод записи в файл
     public void writeToFile(){
             try {
-                File file = new File("solved "+this.outputFilename);
+                File file = new File(this.outputFilename.substring(0,this.outputFilename.lastIndexOf("."))+ " solved.txt");
                 PrintWriter writer = new PrintWriter(file);
                 for (int i = 0; i < this.rows; i++) {
                     for (int j = 0; j < this.cols; j++) {

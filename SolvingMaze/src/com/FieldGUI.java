@@ -470,7 +470,7 @@ public class FieldGUI extends JFrame {
     private void openGuideAction() {
         Desktop desktop = Desktop.getDesktop();
         try {
-            File file = new File("resource\\Руководство пользователя.docx");
+            File file = new File("resource/Mannual.docx");
             desktop.open(file);
         }
         catch (IOException e){
@@ -589,8 +589,9 @@ public class FieldGUI extends JFrame {
 
     //события выбора лабиринта из файла
     private void mazeChooseFromFileAction() {
-        JFileChooser jf = new JFileChooser();
+        JFileChooser jf = new JFileChooser(".");
         FileNameExtensionFilter filter = new FileNameExtensionFilter("TEXT FILES", "txt", "text");
+        jf.setAcceptAllFileFilterUsed(true);
         jf.setFileFilter(filter);
         String path;
         if (jf.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
